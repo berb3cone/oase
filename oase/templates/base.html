@@ -1,0 +1,115 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+
+    <title>
+      {% block title %}OASE {{ request.path }}{% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+  </head>
+  {% if user.is_authenticated %}
+
+  <div id="tabs">
+	<ul>
+      <li class="left">
+        <div class="simple">
+          <button class="dropbtn">
+            <a href="/home/">Home</a>
+          </button>
+        </div>
+      </li>
+      <li class="left">
+        <div class="dropdown">
+          <button class="dropbtn">
+            <a href="/financial/">Financial</a>
+          </button>
+          <div class="dropdown-content">
+            <a href="/financial/loan_app_list/">Application list</a>
+            <a href="/financial/general/">General Dashboard</a>
+            <a href="/financial/detailed/">Detailed Dashboard</a>
+            <a href="/financial/upload-csv/">Add from CSV</a>
+            <a href="/admin/main/loan_client/add/">Add application</a>
+          </div>
+        </div>
+      </li>
+      <li class="left">
+        <div class="dropdown">
+          <button class="dropbtn">
+            <a href="/health/">Health</a>
+          </button>
+          <div class="dropdown-content">
+            <a href="/health/nutrition_client_list/">Client list</a>
+            <a href="/health/general/">General Dashboard</a>
+            <a href="/health/diet/">Diet Dashboard</a>
+            <a href="/health/workout/">Workout Dashboard</a>
+            <a href="/health/nutrition_client_list/">Nutrition list</a>
+            <a href="/admin/main/nutrition_client/add/">Add application</a>
+          </div>
+        </div>
+      </li>
+      <li class="left">
+        <div class="dropdown">
+          <button class="dropbtn">
+            <a href="/admin/">Database</a>
+          </button>
+          <div class="dropdown-content">
+            <a href="/admin/main/loan_client/">Loan clients db</a>
+            <a href="/admin/main/nutrition_client/">Nutrition clients db</a>
+          </div>
+        </div>
+      </li>
+      <li class="right">
+        <div class="simple">
+          <button class="dropbtn">
+            <a href="{% url 'logout' %}">Logout {{ user.username }}</a>
+          </button>
+        </div>
+      </li>
+      <li class="right">
+        <div class="simple">
+          <button class="dropbtn">
+            <a href="/contact/">Contact</a>
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+  <body>
+  <br>
+    {% block content%}
+    {% endblock content %}
+    <script src="{% static 'main.js' %}"></script>
+  </body>
+  {% else %}
+    {% ifnotequal request.path "/" %}
+      <body>
+        <div class="home_div">
+          <ul>
+            <li><a href="{% url 'login' %}">Click to login</a></li>
+          </ul>
+        </div>
+      </body>
+    {% else %}
+      <body>
+        {% block authentication%}
+        {% endblock authentication %}
+        <script src="{% static 'main.js' %}"></script>
+      </body>
+    {% endifnotequal %}
+  {% endif %}
+
+</html>

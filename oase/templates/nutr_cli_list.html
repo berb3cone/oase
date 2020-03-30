@@ -1,0 +1,11 @@
+{% extends "./base.html" %}
+{% block content %}
+  <h1> Nutritionist's clients </h1>
+  <table id="centred">
+    <tr><td><h3>ID</h3></td> <td><h3>Name</h3></td> <td><h3>Age</h3></td> <td><h3>W0</h3></td></tr>
+      {% for client in entryS %}
+      <tr><td><h3>{{client.id}}</h3></td> <td><h3><a href ="{% url 'nutr_detail' client.id%}">{{client.first_name}} {{client.last_name}}</a></h3></td>
+          <td><h3>{{client.age}}</h3></td> <td><h3>{{client.initial_weight}}</h3></td></tr>
+      {% endfor %}
+  </table>
+{% endblock content %}

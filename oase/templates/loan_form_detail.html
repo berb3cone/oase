@@ -1,0 +1,24 @@
+{% extends "./base.html" %}
+{% block content %}
+  <h1>Client details</h1>
+
+  <table id="centred">
+    <tr><td><h3> First name:</h3></td> <td><h3>{{myID.first_name}}</h3></td></tr>
+    <tr><td><h3> Last name:</h3></td> <td><h3>{{myID.last_name}}</h3></td></tr>
+    <tr><td><h3> Sex:</h3></td> <td><h3>{{myID.sex}}</h3></td></tr>
+    <tr><td><h3> Email:</h3></td> <td><h3>{{myID.email}}</h3></td></tr>
+    <tr><td><h3> Receiving income:</h3></td> <td><h3>{{myID.receiving_income}}</h3></td></tr>
+    <tr><td><h3> Age:</h3></td> <td><h3>{{myID.age}}</h3></td></tr>
+    <tr><td><h3> Net income:</h3></td> <td><h3>{{myID.net_income}} RON</h3></td></tr>
+    <tr><td><h3> Needed loan:</h3></td> <td><h3>{{myID.needed_loan}}</h3></td></tr>
+    <tr><td><h3> Return period:</h3></td> <td><h3>{{myID.return_period}} years</h3></td></tr>
+    <tr><td><h3> Pre-approval:</h3></td> <td><h3>{{myID.pre_approved}}</h3></td></tr>
+    {%if myID.pre_approved == "yes" %}
+      <tr><td><h3> Interest rate (for a year):</h3></td> <td><h3>{{myID.interest}}</h3></td></tr>
+      <tr><td><h3> Loan total cost:</h3></td> <td><h3>{{myID.loan_cost}}</h3></td></tr>
+      <tr><td><h3> Monthly payment value:</h3></td> <td><h3>{{myID.monthly_payment}}</h3></td></tr>
+    {% else %}
+      <tr><td><h3> Cause:</h3></td> <td><h3>{{myID.cause}}</h3></td></tr>
+    {% endif %}
+  </table>
+{% endblock content %}

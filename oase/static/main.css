@@ -1,0 +1,225 @@
+body {
+	font: bold 10px/2.5em Verdana;
+/*	background: url(fundal.jpg); */
+  	background-size: cover;
+    background-color: #3a3a3a;
+	text-align:left;
+	margin: 0;
+    padding: 100;
+	opacity: 1;
+	color: white;
+
+}
+
+img#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;}
+
+img {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;}
+
+h1 {
+    text-align:center;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:24px;
+	font-weight:bold;
+	margin-left:40px;
+	margin-top:40px;
+	margin-bottom:20px;
+	padding:0;
+	}
+
+h2 {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	line-height:28px;
+	font-size:20px;
+	font-weight:bold;
+	margin-left:40px;
+	margin-right:40px;
+	margin-top:0;
+	margin-bottom:0;
+	text-align: justify;
+	}
+
+h3 {
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:16px;
+	font-weight:bold;
+	padding:0;
+    text-decoration: none;
+    color: white;
+	margin-top:0;
+	margin-bottom:0;
+	margin-left:0;
+    }
+
+table {
+    background-color: #636363;
+    margin-top:20px;
+    margin-left:40px;
+}
+
+table#centred {
+    margin: 0px auto;
+    margin-top:20px;
+    margin-bottom:40px;
+}
+
+th, td {
+    border-bottom: 1px solid #333333;
+    padding: 5px;
+}
+
+hr {
+	border:none;
+	border-top:4px solid #CCCCCC;
+	height:4px;
+	margin-bottom:25px;
+	}
+
+ul {
+    list-style-type: none;
+}
+
+p {
+    text-decoration: none;
+    color: black;
+	font-size:16px;
+	margin-top:0;
+	margin-bottom:0;
+	margin-left:0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+	font-size:16px;
+}
+
+a:hover {
+    text-decoration: none;
+	color: cyan;
+}
+
+.container {
+  color: black;
+  position: absolute;
+  left: 390px;
+  top: 200px;
+  width: 900px;
+  max-width: 900px;
+  text-align: center;
+}
+
+.home_div {
+  position: absolute;
+  width:190px;
+  height: 20px;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  margin: -70px 0 0 -115px;
+}
+
+.indent {
+    text-indent: 30px;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+	line-height:28px;
+	font-size:20px;
+	font-weight:bold;
+	margin-left:40px;
+	margin-right:40px;
+	margin-top:0;
+	margin-bottom:0;
+	text-align: justify;
+}
+
+.graph_pos {
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+
+}
+
+button {
+	background-color: grey;
+	color: black;
+}
+
+#tabs ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    background-color: #333;
+}
+
+#tabs li.left {
+    float: left;
+	border-right: 1px solid #bbb;
+}
+
+#tabs li.right {
+    float: right;
+    border-left: 1px solid #bbb;
+}
+
+/* Submenues */
+
+.dropbtn {
+  background-color: #333;
+  color: white;
+  min-width: 120px;
+  font-size: 20px;
+  border: none;
+}
+
+.simple {
+  float:left
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  background-color: white;
+  font-size:16px;
+  padding: 8px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  color: #727272;
+}
+
+#tabs ul li .dropdown:hover .dropdown-content {display: block;}
+
+
+/* End of submenues */
+
+
+
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#tabs a span {float:none;}
+
+/* End IE5-Mac hack */
+#tabs a:hover span {
+	color:blue;
+}
+
+#tabs a:hover span {
+	color:blue;
+}

@@ -1,0 +1,55 @@
+{% extends "./base.html" %}
+{% block content %}
+  <h1> Conditions used to evaluate a loan application </h1>
+    <div class="indent">
+      In this section a loan application is evaluated automatically - based on multiple input criteria. For each
+      application will be calculated a rating, which will impact the loan approval, as well as the loan interest
+      - and in the end the loan total cost and monthly payment value.
+    </div>
+    <div class="indent">
+      In parallel with all this, some minimal conditions are checked in order to evaluate if the loan can be approved
+      or not. If one of the following conditions is not accomplished, the application will be refused:
+    </div>
+    <div class="indent">
+      - client's age (if he/she is under 19 or over 65);
+    </div>
+    <div class="indent">
+      - the official loan record (if he/she had important delays for repayments in the past, or did not pay at all);
+    </div>
+    <div class="indent">
+      - the work experience is less than 2 years;
+    </div>
+    <div class="indent">
+      - the client has more than 4 dependents (family members without another income);
+    </div>
+    <div class="indent">
+      - the total monthly payments (payments for previous loans + the ones for this loan) are greater than 35% of
+      the clients net income
+    </div>
+    <div class="indent">
+      - rating greater than or equal to 0.6
+    </div>
+    <div class="indent">
+      If all the exclusive conditions are met, the application will be approved. The default rating is 1, and the
+      default annual interest is 7%. The rating can be improved if the applicant has higher education (Master +0.1,
+      Phd. +0.2), or receives his/her monthly income at this bank (+0.1). The rating is reduced based on age (-0.2
+      for persons between 20-22 and 63-65 years old; -0.1 for the ones between 23-25 and 59-62), on work experience
+      is between 2-4 years (-0.1), on education (-0.2 for elementary school and -0.1 for high school) and on the
+      number of dependents (-0.1 for 1 dependent, -0.2 for a number of 2-4 dependents).
+      Based on these values, we have possible ratings (for approved loans) from 0.6 and up to 1.3. The corresponding
+      interest values are displayed in the table below.
+    </div>
+
+    <table id="centred">
+      <tr><td><h3>Rating</h3></td> <td><h3>Interest</h3></td></tr>
+      <tr><td><h3>0.6</h3></td> <td><h3>11.7</h3></td></tr>
+      <tr><td><h3>0.7</h3></td> <td><h3>10</h3></td></tr>
+      <tr><td><h3>0.8</h3></td> <td><h3>8.8</h3></td></tr>
+      <tr><td><h3>0.9</h3></td> <td><h3>7.8</h3></td></tr>
+      <tr><td><h3>1.0</h3></td> <td><h3>7</h3></td></tr>
+      <tr><td><h3>1.1</h3></td> <td><h3>6.4</h3></td></tr>
+      <tr><td><h3>1.2</h3></td> <td><h3>5.8</h3></td></tr>
+      <tr><td><h3>1.3</h3></td> <td><h3>5.4</h3></td></tr>
+    </table>
+
+{% endblock content %}

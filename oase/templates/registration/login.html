@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block authentication %}
+  <div class="container">
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">Login</div>
+        <div class="panel-body">
+          <form method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="login"/>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock authentication %}

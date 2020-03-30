@@ -1,0 +1,11 @@
+{% extends "./base.html" %}
+{% block content %}
+  <h1> Loan clients </h1>
+  <table id="centred">
+    <tr><td><h3>ID</h3></td> <td><h3>Name</h3></td> <td><h3>Date of application</h3></td> <td><h3>Approved</h3></td></tr>
+      {% for client in entryS %}
+      <tr><td><h3>{{client.id}}</h3></td> <td><h3><a href ="{% url 'loan_form_detail' client.id%}">{{client.first_name}} {{client.last_name}}</a></h3></td>
+          <td><h3>{{client.loan_req_date}}</h3></td> <td><h3>{{client.pre_approved}}</h3></td></tr>
+      {% endfor %}
+  </table>
+{% endblock content %}

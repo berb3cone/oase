@@ -1,0 +1,26 @@
+{% extends "./base.html" %}
+{% block content %}
+  <br>
+  <div>
+    The CSV file containing the Loan clients must have a header and the order must be:
+    <br>
+    first_name,last_name,receiving_income,email,sex,loan_history,birth_date,education,work_experience,
+    gross_income,tax_percent,dependents,current_monthly_payments,loan_req_date,needed_loan,return_period
+  </div>
+  {% if messages %}
+    {% for message in messages %}
+      <div>
+        <strong>{{message|safe}}</strong>
+      </div>
+    {% endfor %}
+  {% else %}
+    {{order}}
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <label>Upload a file</label>
+      <input type="file" name="file">
+        <h3>Only accepts CSV files</h3>
+      <button type="submit">Upload</button>
+    </form>
+  {% endif %}
+{% endblock %}
